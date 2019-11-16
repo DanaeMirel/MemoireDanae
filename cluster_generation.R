@@ -19,11 +19,11 @@ conditions <- function(p_dim, K_clust, lam){
     print("lambda must be between -5 and 5")                   # paramètre à utiliser dans la transformation de Cox 
     x <- x + 1
   }
-  if( p_dim!=2 && p_dim!=5 && p_dim!=10){        # pour cette experience on va étudier les cas où la 
+  if( p_dim!=2 && p_dim!=5 && p_dim!=10){                      # pour cette experience on va étudier les cas où la 
     print("choose other value of p")                           # dimension de beta est 2, 5, 10 ou 15  
     x <- x+1 
   }
-  if( K_clust!=3 && K_clust!=5 && K_clust!=7 && K_clust!=10 ){ # le nombre de clusters génerées est fixé à 3, 5 7 ou bien 10
+  if( K_clust!=3 && K_clust!=6 && K_clust!=10 ){ # le nombre de clusters génerées est fixé à 3, 5 7 ou bien 10
     print("choose other value of K")  
     x <- x+1
   }
