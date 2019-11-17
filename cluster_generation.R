@@ -109,7 +109,7 @@ MixData <- function(p_dim, K_clust, mean_overlap, N_size, lam){
                        PiLow = pi_min) 
     
       # faible chevauchement  
-      Mix_MO <- MixSim(BarOmega = mean_overlap/10,    
+      Mix_LO <- MixSim(BarOmega = mean_overlap/10,    
                        MaxOmega = max_ovelp/10,    
                        K = K_clust, 
                        p = p_dim, 
@@ -315,9 +315,19 @@ MixData_generation <- function(p_dim, K_clust, mean_overlap, N_size, lam){
 
 # Test de la fonction 
 set.seed(123)
-P2_K3_datasets <- MixData_generation(p_dim = 2, K_clust = 3, mean_overlap = 0.005,
-                                     N_size = 10000, lam = 0.5)
+# no conditions particulaires 
+P2K3_datasets <- MixData_generation(p_dim = 2, 
+                                    K_clust = 3,
+                                    mean_overlap = 0.005,
+                                    N_size = 10000, 
+                                    lam = 0.5)
+# ajustements manuels
+P2K3_datasets_cond <- MixData(p_dim = 2, 
+                              K_clust = 3,
+                              mean_overlap = 0.005,
+                              N_size = 10000, 
+                              lam = 0.5)
 
-population_P2_K3_HO <- P2_K3_datasets[[1]] # base de donnés avec chevauchement elevé 
-population_P2_K3_MO <- P2_K3_datasets[[2]] # base de donnés avec chevauchement moderé
-population_P2_K3_LO <- P2_K3_datasets[[3]] # base de donnés avec faible chevauchement 
+population_P2K3_HO <- P2K3_datasets[[1]] # base de donnés avec chevauchement elevé 
+population_P2K3_MO <- P2K3_datasets[[2]] # base de donnés avec chevauchement moderé
+population_P2K3_LO <- P2K3_datasets[[3]] # base de donnés avec faible chevauchement 
