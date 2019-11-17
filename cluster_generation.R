@@ -331,3 +331,14 @@ P2K3_datasets_cond <- MixData(p_dim = 2,
 population_P2K3_HO <- P2K3_datasets[[1]] # base de donnés avec chevauchement elevé 
 population_P2K3_MO <- P2K3_datasets[[2]] # base de donnés avec chevauchement moderé
 population_P2K3_LO <- P2K3_datasets[[3]] # base de donnés avec faible chevauchement 
+
+# suvgarder la donnée generée au besoin 
+
+setwd("C:/Users/Documents/project/")
+
+write.table(x=population_P2K3_HO, 
+            file="P2K3_HO.txt", 
+            sep = " ",
+            dec = ".",
+            row.names = FALSE, 
+            col.names = TRUE)
