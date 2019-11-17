@@ -235,7 +235,6 @@ MixData <- function(p_dim, K_clust, mean_overlap, N_size, lam){
   }
 }
 
-
 # fonction alternative qui n'impose pas des conditions particulaires
 
 MixData_generation <- function(p_dim, K_clust, mean_overlap, N_size, lam){
@@ -281,7 +280,7 @@ MixData_generation <- function(p_dim, K_clust, mean_overlap, N_size, lam){
                 "blue", "brown", "green", "Skyblue", "orange", "yellow","pink", "Violet")
     
     x11()
-    par(mfrow=c(2,1), mar= c(1, 2, 2, 2) )
+    par(mfrow=c(3,1), mar= c(1, 2, 2, 2) )
     plot(dataset_HO$X, col = colors[dataset_HO$id], pch=19, cex =0.8,
          xlab="", ylab="", main="High overlap",  xaxt='n',  yaxt='n')
     
@@ -314,14 +313,11 @@ MixData_generation <- function(p_dim, K_clust, mean_overlap, N_size, lam){
   return(mix_data)  # la fonction returne une liste avec les trois jeux de données
 }
 
-
 # Test de la fonction 
+set.seed(123)
 P2_K3_datasets <- MixData_generation(p_dim = 2, K_clust = 3, mean_overlap = 0.005,
                                      N_size = 10000, lam = 0.5)
 
 population_P2_K3_HO <- P2_K3_datasets[[1]] # base de donnés avec chevauchement elevé 
 population_P2_K3_MO <- P2_K3_datasets[[2]] # base de donnés avec chevauchement moderé
-
-head(population_P2_K3_HO)
-head(population_P2_K3_MO)
-
+population_P2_K3_LO <- P2_K3_datasets[[3]] # base de donnés avec faible chevauchement 
