@@ -332,7 +332,7 @@ population_P2K3_HO <- P2K3_datasets[[1]] # base de donnés avec chevauchement el
 population_P2K3_MO <- P2K3_datasets[[2]] # base de donnés avec chevauchement moderé
 population_P2K3_LO <- P2K3_datasets[[3]] # base de donnés avec faible chevauchement 
 
-# suvgarder la donnée generée au besoin 
+# Sauvegarder la donnée générée au besoin 
 
 setwd("C:/Users/Documents/project/")
 
